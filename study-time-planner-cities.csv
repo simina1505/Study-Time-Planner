@@ -1,0 +1,321 @@
+key,value
+1,Abrud
+2,Adjud
+3,Agnita
+4,Aiud
+5,Alba Iulia
+6,Alesd
+7,Alexandria
+8,Amara
+9,Anina
+10,Aninoasa
+11,Arad
+12,Ardud
+13,Avrig
+14,Azuga
+15,Babadag
+16,Babeni
+17,Bacau
+18,Baia de Arama
+19,Baia de Aries
+20,Baia Mare
+21,Baia Sprie
+22,Baicoi
+23,Baile Govora
+24,Baile Herculane
+25,Baile Olanesti
+26,Bailesti
+27,Baile Tusnad
+28,Balan
+29,Balcesti
+30,Bals
+31,Baneasa
+32,Baraolt
+33,Barlad
+34,Bechet
+35,Beclean
+36,Beius
+37,Berbesti
+38,Beresti
+39,Bicaz
+40,Bistrita
+41,Blaj
+42,Bocsa
+43,Boldesti-Scaeni
+44,Bolintin-Vale
+45,Borsa
+46,Borsec
+47,Botosani
+48,Brad
+49,Bragadiru
+50,Braila
+51,Brasov
+52,Breaza
+53,Brezoi
+54,Brosteni
+55,Bucecea
+56,Bucuresti
+57,Budesti
+58,Buftea
+59,Buhusi
+60,Bumbesti-Jiu
+61,Busteni
+62,Buzau
+63,Buzias
+64,Cajvana
+65,Calafat
+66,Calan
+67,Calarasi
+68,Calimanesti
+69,Campeni
+70,Campia Turzii
+71,Campina
+72,Campulung
+73,Campulung Moldovenesc
+74,Caracal
+75,Caransebes
+76,Carei
+77,Cavnic
+78,Cazanesti
+79,Cehu Silvaniei
+80,Cernavoda
+81,Chisineu-Cris
+82,Chitila
+83,Ciacova
+84,Cisnadie
+85,Cluj-Napoca
+86,Codlea
+87,Comanesti
+88,Comarnic
+89,Constanta
+90,Copsa Mica
+91,Corabia
+92,Costesti
+93,Covasna
+94,Craiova
+95,Cristuru Secuiesc
+96,Cugir
+97,Curtea de Arges
+98,Curtici
+99,Dabuleni
+100,Darabani
+101,Darmanesti
+102,Dej
+103,Deta
+104,Deva
+105,Dolhasca
+106,Dorohoi
+107,Draganesti-Olt
+108,Dragasani
+109,Dragomiresti
+110,Drobeta-Turnu Severin
+111,Dumbraveni
+112,Eforie
+113,Fagaras
+114,Faget
+115,Falticeni
+116,Faurei
+117,Fetesti
+118,Fieni
+119,Fierbinti-Targ
+120,Filiasi
+121,Flamanzi
+122,Focsani
+123,Frasin
+124,Fundulea
+125,Gaesti
+126,Galati
+127,Gataia
+128,Geoagiu
+129,Gheorgheni
+130,Gherla
+131,Ghimbav
+132,Giurgiu
+133,Gura Humorului
+134,Harlau
+135,Harsova
+136,Hateg
+137,Horezu
+138,Huedin
+139,Hunedoara
+140,Husi
+141,Ianca
+142,Iasi
+143,Iernut
+144,Ineu
+145,Insuratei
+146,Intorsura Buzaului
+147,Isaccea
+148,Jibou
+149,Jimbolia
+150,Lehliu Gara
+151,Lipova
+152,Liteni
+153,Livada
+154,Ludus
+155,Lugoj
+156,Lupeni
+157,Macin
+158,Magurele
+159,Mangalia
+160,Marasesti
+161,Marghita
+162,Medgidia
+163,Medias
+164,Miercurea Ciuc
+165,Miercurea Nirajului
+166,Miercurea Sibiului
+167,Mihailesti
+168,Milisauti
+169,Mioveni
+170,Mizil
+171,Moinesti
+172,Moldova Noua
+173,Moreni
+174,Motru
+175,Murfatlar
+176,Murgeni
+177,Nadlac
+178,Nasaud
+179,Navodari
+180,Negresti
+181,Negresti-Oas
+182,Negru Voda
+183,Nehoiu
+184,Novaci
+185,Nucet
+186,Ocna Mures
+187,Ocna Sibiului
+188,Ocnele Mari
+189,Odobesti
+190,Odorheiu Secuiesc
+191,Oltenita
+192,Onesti
+193,Oradea
+194,Orastie
+195,Oravita
+196,Orsova
+197,Otelu Rosu
+198,Otopeni
+199,Ovidiu
+200,Panciu
+201,Pancota
+202,Pantelimon
+203,Pascani
+204,Patarlagele
+205,Pecica
+206,Petrila
+207,Petrosani
+208,Piatra-Olt
+209,Piatra Neamt
+210,Pitesti
+211,Ploiesti
+212,Plopeni
+213,Podu Iloaiei
+214,Pogoanele
+215,Popesti-Leordeni
+216,Potcoava
+217,Predeal
+218,Pucioasa
+219,Racari
+220,Radauti
+221,Ramnicu Sarat
+222,Ramnicu Valcea
+223,Rasnov
+224,Recas
+225,Reghin
+226,Resita
+227,Roman
+228,Rosiorii de Vede
+229,Rovinari
+230,Roznov
+231,Rupea
+232,Sacele
+233,Sacueni
+234,Salcea
+235,Saliste
+236,Salistea de Sus
+237,Salonta
+238,Sangeorgiu de Padure
+239,Sangeorz-Bai
+240,Sannicolau Mare
+241,Santana
+242,Sarmasu
+243,Satu Mare
+244,Saveni
+245,Scornicesti
+246,Sebes
+247,Sebis
+248,Segarcea
+249,Seini
+250,Sfantu Gheorghe
+251,Sibiu
+252,Sighetu Marmatiei
+253,Sighisoara
+254,Simeria
+255,Sinaia
+256,Siret
+257,Slanic
+258,Slanic-Moldova
+259,Slatina
+260,Slobozia
+261,Solca
+262,Somcuta Mare
+263,Sovata
+264,Stefanesti
+265,Stefanesti
+266,Stei
+267,Strehaia
+268,Suceava
+269,Sulina
+270,Talmaciu
+271,Tandarei
+272,Targoviste
+273,Targu Bujor
+274,Targu Carbunesti
+275,Targu Frumos
+276,Targu Jiu
+277,Targu Lapus
+278,Targu Mures
+279,Targu Neamt
+280,Targu Ocna
+281,Targu Secuiesc
+282,Tarnaveni
+283,Tasnad
+284,Tautii-Magheraus
+285,Techirghiol
+286,Tecuci
+287,Teius
+288,Ticleni
+289,Timisoara
+290,Tismana
+291,Titu
+292,Toplita
+293,Topoloveni
+294,Tulcea
+295,Turceni
+296,Turda
+297,Turnu Magurele
+298,Ulmeni
+299,Ungheni
+300,Uricani
+301,Urlati
+302,Urziceni
+303,Valea lui Mihai
+304,Valenii de Munte
+305,Vanju Mare
+306,Vascau
+307,Vaslui
+308,Vatra Dornei
+309,Vicovu de sus
+310,Victoria
+311,Videle
+312,Viseu de Sus
+313,Vlahita
+314,Voluntari
+315,Vulcan
+316,Zalau
+317,Zarnesti
+318,Zimnicea
+319,Zlatna
+320,Simleu Silvaniei
