@@ -1,138 +1,142 @@
-# Study-Time-Planner
+# Study Time Planner
 
 Study Time Planner - Hategan Simina-Elena
 
-Repository link: https://github.com/simina1505/Study-Time-Planner.git
+## Descrierea aplicației
 
-## Project Structure
+Această aplicație ajută studenții să își organizeze eficient timpul de studiu prin crearea și gestionarea grupurilor de studiu, programarea sesiunilor, partajarea de materiale și comunicarea în timp real. Platforma oferă funcționalități precum autentificare, gestionare sarcini, quiz-uri și mesagerie instant pentru o experiență colaborativă completă.
 
-This project consists of two main components:
+Link către repository: https://github.com/simina1505/Study-Time-Planner.git
 
-- **Study_Group_Organizer_Backend**: Node.js backend server with Express.js, MongoDB, and Socket.IO
-- **Study-Group-Organizer-Frontend**: React Native mobile application built with Expo
+## Structura Proiectului
 
-## Prerequisites
+Acest proiect este format din două componente principale:
 
-Before running this project, make sure you have the following installed:
+- **Study_Group_Organizer_Backend**: Server backend Node.js cu Express.js, MongoDB și Socket.IO
+- **Study-Group-Organizer-Frontend**: Aplicație mobilă React Native construită cu Expo
 
-- [Node.js](https://nodejs.org/) (version 18 or higher)
-- [MongoDB](https://www.mongodb.com/) (local installation or MongoDB Atlas account)
-- [MongoDB Compass](https://www.mongodb.com/products/compass) (optional, for managing your MongoDB database visually)
+## Cerințe preliminare
+
+Înainte de a rula acest proiect, asigură-te că ai instalat următoarele:
+
+- [Node.js](https://nodejs.org/) (versiunea 18 sau mai nouă)
+- [MongoDB](https://www.mongodb.com/) (instalare locală sau cont MongoDB Atlas)
+- [MongoDB Compass](https://www.mongodb.com/products/compass) (opțional, pentru gestionarea vizuală a bazei de date)
 - [Git](https://git-scm.com/)
-- [Expo CLI](https://docs.expo.dev/get-started/installation/) installed globally:
+- [Expo CLI](https://docs.expo.dev/get-started/installation/) instalat global:
   ```bash
   npm install -g @expo/cli
   ```
-- **Expo Go** app on your mobile device for testing
-- [Visual Studio Code](https://code.visualstudio.com/) (recommended editor)
-- [Expo Go](https://expo.dev/client) app installed from the App Store (iOS) or Google Play Store (Android)
+- Aplicația **Expo Go** pe dispozitivul tău mobil pentru testare
+- [Visual Studio Code](https://code.visualstudio.com/) (editor recomandat)
+- [Expo Go](https://expo.dev/client) instalat din App Store (iOS) sau Google Play Store (Android)
 
-## Installation & Setup
+## Instalare & Configurare
 
-### 1. Clone the Repository
+### 1. Clonează Repository-ul
 
 ```bash
 git clone <your-repository-url>
 cd StudyTimePlanner-Hategan_Simina_Elena
 ```
 
-### 2. Backend Setup (Study_Group_Organizer_Backend)
+### 2. Configurare Backend (Study_Group_Organizer_Backend)
 
-1. **Navigate to the backend directory:**
+1. **Navighează în directorul backend:**
 
    ```bash
    cd Study_Group_Organizer_Backend
    ```
 
-2. **Install dependencies:**
+2. **Instalează dependențele:**
 
    ```bash
    npm install
    ```
 
-3. **Set up environment variables:**
-   Create a `.env` file in the backend root directory:
+3. **Configurează variabilele de mediu:**
+   Creează un fișier `.env` în directorul principal al backend-ului:
 
    ```env
    PORT=3000
    MONGODB_URL=mongodb://localhost:27017/studygrouporganizer
-   JWT_SECRET=your-jwt-secret-key
-   EMAIL_USER=your-email@gmail.com
-   EMAIL_PASS=your-email-password
-   CLOUDINARY_NAME=your-cloudinary-name
-   CLOUDINARY_API_KEY=your-cloudinary-api-key
-   CLOUDINARY_API_SECRET=your-cloudinary-api-secret
+   JWT_SECRET=cheia-ta-secreta-jwt
+   EMAIL_USER=adresa-ta-email@gmail.com
+   EMAIL_PASS=parola-ta-email
+   CLOUDINARY_NAME=numele-tău-cloudinary
+   CLOUDINARY_API_KEY=cheia-ta-api-cloudinary
+   CLOUDINARY_API_SECRET=secretul-tău-api-cloudinary
    FRONTEND_URL=http://localhost:3000
-   GOOGLE_API_KEY=your-google-api-key
+   GOOGLE_API_KEY=cheia-ta-api-google
    ```
 
-4. **Set up Firebase Admin SDK:**
+4. **Configurează Firebase Admin SDK:**
 
-   - Download your Firebase service account key
-   - Place it in the backend root directory
-   - Rename it to match the pattern: `studygrouporganizer-firebase-adminsdk-[unique-id].json`
+   - Descarcă cheia contului de serviciu Firebase
+   - Salvează fișierul în directorul principal al backend-ului
+   - Redenumește fișierul conform modelului: `studygrouporganizer-firebase-adminsdk-[id-unic].json`
 
-5. **Import CSV data into MongoDB:**
+5. **Importă datele CSV în MongoDB:**
 
-   Add the .csv files to MongoDB using MongoDB Compass:
+   Adaugă fișierele .csv în MongoDB folosind MongoDB Compass:
 
-   1. Open **MongoDB Compass** and connect to your MongoDB instance.
-   2. Select your target database or create a new one.
-   3. Click on the desired collection or create a new collection.
-   4. Click the **"Add Data"** button and choose **"Import File"**.
-   5. Select your CSV file, set the file type to **CSV**, and configure any import options as needed.
-   6. Click **"Import"** to add the data to your collection.
+   1. Deschide **MongoDB Compass** și conectează-te la instanța ta MongoDB.
+   2. Selectează baza de date țintă sau creează una nouă.
+   3. Selectează colecția dorită sau creează una nouă.
+   4. Apasă pe butonul **"Add Data"** și alege **"Import File"**.
+   5. Selectează fișierul CSV, setează tipul fișierului pe **CSV** și configurează opțiunile de import după nevoie.
+   6. Apasă **"Import"** pentru a adăuga datele în colecție.
 
-   Make sure MongoDB is running and the CSV files are properly formatted.
+   Asigură-te că MongoDB rulează și fișierele CSV sunt corect formate.
 
-6. **Start the backend server:**
+6. **Pornește serverul backend:**
 
    ```bash
    nodemon index.js
    ```
 
-   The server will start on port 3000 (or your specified port).
+   Serverul va porni pe portul 3000 (sau portul specificat de tine).
 
-### 3. Frontend Setup (Study-Group-Organizer-Frontend)
+### 3. Configurare Frontend (Study-Group-Organizer-Frontend)
 
-1. **Navigate to the frontend directory:**
+1. **Navighează în directorul frontend:**
 
    ```bash
    cd ../Study-Group-Organizer-Frontend/Study-Group-Organizer
    ```
 
-2. **Install dependencies:**
+2. **Instalează dependențele:**
 
    ```bash
    npm install
    ```
 
-3. **Configure the backend URL:**
+3. **Configurează URL-ul backend-ului:**
 
-   - Copy `constants/config-exemple.js` to `constants/config.js`
-   - Update the `SERVER_URL` in your new `config.js` file:
+   - Copiază `constants/config-exemple.js` în `constants/config.js`
+   - Actualizează `SERVER_URL` în noul fișier `config.js`:
 
    ```javascript
    const SERVER_URL = "http://localhost:3000";
    ```
 
-4. **Start the frontend application:**
+4. **Pornește aplicația frontend:**
 
    ```bash
    npx expo start -c
    ```
 
-   The `-c` flag clears the cache for a fresh start.
+   Opțiunea `-c` curăță cache-ul pentru o pornire proaspătă.
 
-### 4. Testing the Application
+### 4. Testarea aplicației
 
-1. **Install Expo Go** on your mobile device from the App Store (iOS) or Google Play Store (Android)
-2. **Scan the QR code** displayed in your terminal or browser after running `npx expo start -c`
-3. **The app will load** on your device
+1. **Instalează Expo Go** pe dispozitivul tău mobil din App Store (iOS) sau Google Play Store (Android)
+2. **Scanează codul QR** afișat în terminal sau browser după rularea comenzii `npx expo start -c`
+3. **Aplicația se va încărca** pe dispozitivul tău
 
-## Running the Complete Application
+## Rularea completă a aplicației
 
-To run both frontend and backend simultaneously:
+Pentru a rula simultan frontend-ul și backend-ul:
 
 1. **Terminal 1 - Backend:**
 
@@ -147,21 +151,10 @@ To run both frontend and backend simultaneously:
    npx expo start -c
    ```
 
-## Features
+## Probleme frecvente
 
-- User authentication and authorization
-- Study group creation and management
-- Real-time messaging with Socket.IO
-- Location-based group discovery
-- Task and quiz management
-- Session scheduling
-- QR code scanning for quick group joining
-- File sharing capabilities
-
-## Troubleshooting
-
-- Make sure MongoDB is running before starting the backend
-- Import your CSV files into MongoDB as described above
-- Ensure both frontend and backend are running on different ports
-- Check that your mobile device and development machine are on the same network
-- Verify all environment variables are properly configured
+- Asigură-te că MongoDB rulează înainte de a porni backend-ul
+- Importă fișierele CSV în MongoDB conform instrucțiunilor de mai sus
+- Asigură-te că frontend-ul și backend-ul rulează pe porturi diferite
+- Verifică dacă dispozitivul mobil și calculatorul de dezvoltare sunt în aceeași rețea
+- Verifică dacă toate variabilele de mediu sunt configurate corect
