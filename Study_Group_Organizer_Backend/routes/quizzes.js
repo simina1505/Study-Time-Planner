@@ -141,7 +141,16 @@ router.delete("/deleteQuiz/:quizId", async (req, res) => {
 
     const isRandomTest = quiz.title.startsWith("Test-");
     if (!isRandomTest) {
-      await Question.deleteMany({ _id: { $in: quiz.questions } });
+      for (const questionId of quiz.questions) {
+        const quizzesUsingQuestion = await Quiz.countDocuments({
+          questions: questionId,
+          _id: { $ne: quizId },
+        });
+
+        if (quizzesUsingQuestion === 0) {
+          await Question.findByIdAndDelete(questionId);
+        }
+      }
     }
 
     await Quiz.findByIdAndDelete(quizId);
