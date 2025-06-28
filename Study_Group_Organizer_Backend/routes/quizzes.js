@@ -139,12 +139,18 @@ router.delete("/deleteQuiz/:quizId", async (req, res) => {
         .json({ success: false, message: "Quiz not found" });
     }
 
-    await Question.deleteMany({ _id: { $in: quiz.questions } });
+    const isRandomTest = quiz.title.startsWith("Test-");
+    if (!isRandomTest) {
+      await Question.deleteMany({ _id: { $in: quiz.questions } });
+    }
+
     await Quiz.findByIdAndDelete(quizId);
 
     res.json({
       success: true,
-      message: "Quiz and its questions deleted successfully",
+      message: isRandomTest
+        ? "Random test deleted successfully"
+        : "Quiz and its questions deleted successfully",
     });
   } catch (error) {
     res.status(500).json({ success: false, message: "Error deleting quiz" });

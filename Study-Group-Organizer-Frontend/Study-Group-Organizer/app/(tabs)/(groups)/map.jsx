@@ -66,6 +66,33 @@ const Map = () => {
     }
   };
 
+  const getMarkerCoordinates = (groups, currentGroup, index) => {
+    const baseLatitude = currentGroup.location.coordinates[1];
+    const baseLongitude = currentGroup.location.coordinates[0];
+
+    const sameLocationGroups = groups.filter(
+      (group) =>
+        Math.abs(group.location.coordinates[1] - baseLatitude) < 0.0001 &&
+        Math.abs(group.location.coordinates[0] - baseLongitude) < 0.0001
+    );
+
+    if (sameLocationGroups.length <= 1) {
+      return { latitude: baseLatitude, longitude: baseLongitude };
+    }
+
+    const groupIndex = sameLocationGroups.findIndex(
+      (group) => group._id === currentGroup._id
+    );
+
+    const offsetDistance = 0.01;
+    const angle = (groupIndex * 2 * Math.PI) / sameLocationGroups.length;
+
+    return {
+      latitude: baseLatitude + offsetDistance * Math.cos(angle),
+      longitude: baseLongitude + offsetDistance * Math.sin(angle),
+    };
+  };
+
   const handleJoinGroup = async (groupId) => {
     try {
       await axios.post(`${config.SERVER_URL}/sendRequestToJoin`, {
@@ -101,10 +128,11 @@ const Map = () => {
           initialRegion={{
             latitude: cityCoords.latitude,
             longitude: cityCoords.longitude,
-            latitudeDelta: 0.1,
-            longitudeDelta: 0.1,
-          }}>
-          {groups.map((group) => {
+            latitudeDelta: 0.5,
+            longitudeDelta: 0.5,
+          }}
+        >
+          {groups.map((group, index) => {
             let pinColor = styles.notMemberColor.backgroundColor;
 
             if (group.creator === loggedUser) {
@@ -112,17 +140,15 @@ const Map = () => {
             } else if (group.members.includes(loggedUser)) {
               pinColor = styles.memberColor.backgroundColor;
             }
-
+            const coordinates = getMarkerCoordinates(groups, group, index);
             return (
               <Marker
                 key={group._id}
-                coordinate={{
-                  latitude: group.location.coordinates[1],
-                  longitude: group.location.coordinates[0],
-                }}
+                coordinate={coordinates}
                 title={group.name}
                 description={group.subject}
-                pinColor={pinColor}>
+                pinColor={pinColor}
+              >
                 <Callout onPress={() => handleMarkerPress(group)}>
                   <View
                     style={{
@@ -136,7 +162,9 @@ const Map = () => {
                       shadowOpacity: 0.08,
                       shadowRadius: 2,
                       elevation: 2,
-                    }}>
+                      minWidth: 200,
+                    }}
+                  >
                     <View className="items-center">
                       <Text
                         style={{
@@ -144,7 +172,8 @@ const Map = () => {
                           fontWeight: "bold",
                           color: "#504357",
                           textAlign: "center",
-                        }}>
+                        }}
+                      >
                         {group.name}
                       </Text>
                       <Text
@@ -155,7 +184,8 @@ const Map = () => {
                           color: "#666",
                           textAlign: "center",
                           fontSize: 13,
-                        }}>
+                        }}
+                      >
                         {group.description}
                       </Text>
                     </View>
@@ -166,13 +196,15 @@ const Map = () => {
                           flexDirection: "row",
                           flexWrap: "wrap",
                           marginBottom: 6,
-                        }}>
+                        }}
+                      >
                         <Text
                           style={{
                             fontSize: 14,
                             fontWeight: "bold",
                             color: "#333",
-                          }}>
+                          }}
+                        >
                           Subjects:{" "}
                         </Text>
                         {group.subject.map((subject, index) => (
@@ -184,7 +216,8 @@ const Map = () => {
                               marginRight: 4,
                               textTransform: "capitalize",
                               fontSize: 13,
-                            }}>
+                            }}
+                          >
                             {subject}
                             {index !== group.subject.length - 1 && ","}{" "}
                           </Text>
@@ -197,13 +230,15 @@ const Map = () => {
                         flexDirection: "row",
                         flexWrap: "wrap",
                         marginBottom: 4,
-                      }}>
+                      }}
+                    >
                       <Text
                         style={{
                           fontSize: 14,
                           fontWeight: "bold",
                           color: "#333",
-                        }}>
+                        }}
+                      >
                         City:{" "}
                       </Text>
                       <Text
@@ -212,7 +247,8 @@ const Map = () => {
                           color: "#555",
                           textTransform: "capitalize",
                           fontSize: 13,
-                        }}>
+                        }}
+                      >
                         {group.city}
                       </Text>
                     </View>
@@ -224,7 +260,8 @@ const Map = () => {
                             marginTop: 4,
                             fontWeight: "bold",
                             fontSize: 13,
-                          }}>
+                          }}
+                        >
                           Waiting for approval
                         </Text>
                       )}
@@ -238,7 +275,8 @@ const Map = () => {
                             fontWeight: "bold",
                             paddingVertical: 4,
                             fontSize: 14,
-                          }}>
+                          }}
+                        >
                           Go to group
                         </Text>
                       )}
@@ -252,7 +290,8 @@ const Map = () => {
                               fontWeight: "bold",
                               paddingVertical: 4,
                               fontSize: 14,
-                            }}>
+                            }}
+                          >
                             Join group
                           </Text>
                         )}
